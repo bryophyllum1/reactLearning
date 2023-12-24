@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    The lower the page size is the faster the loading time will be.
+
+    <script>
+        // literals -used for shortening the code while creation of an object
+        function person(firstname, lastname){
+            return {
+                firstname,   // object literal or property shorthand ~ firstname: firstname,
+                lastname,
+                fullname : firstname + " " + lastname
+            };
+        }
+
+        // destructuring syntax - - used for shortening the code to get the values out of an object
+        // const {firstname, lastname, age} = person("john", "doe");           //const p = person("john", "newman");
+        
+        // property_name:alias
+        const {firstname, fullname: name, lastname, age} = person("john", "doe");           //const p = person("john", "newman"); 
+
+
+    // template/string literals - javascript doesn't have concept of characters rather only string
+    const message = "hi I'm " + name; // this arises the confusion of what the final string will look like when we do multiple concatenations
+     
+    // we now use `` for defining a string literal
+    const message2 = `Hi I'm ${name}. Good Morning !!`;
+    </script>
+    
+</body>
+</html>

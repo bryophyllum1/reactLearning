@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            const b = {name: "Test", age: 12};
+            b.age = 15; // this will work as the immutability is checked based on change in reference
+            b = { age: 12}; // this won'n work
+        </script>
+    </body>
+</html>

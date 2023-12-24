@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const nos = [1,2, 3, 4,5];
+        // const square = [];
+        // for (let i= 0; i < nos.length; i++){
+        //     square.push(nos[i] * nos[i]);
+        // }
+
+        const square = nos.map(function(value, index, array){
+            console.log(value, index, array);
+            // Not the correct way, as for odd values it will just add undefined in the square array
+            if (value%2===0){
+                return value *value;
+            }
+        });
+
+        const evenNos = square.filter(function (val){
+            return val !== undefined;
+        })
+
+        // since javascript is all about asynchronous programming, we tend not to use mutable variables objects because it makes it difficult for debugging,etc.
+
+        const even = nos.filter((val) => val%2 ===0).map((v) => v * v);
+        console.log(nos);
+        console.log(square);
+        console.log(even);
+    </script>
+</body>
+</html>

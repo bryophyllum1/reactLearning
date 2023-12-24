@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function fun_name() : named function
+        // function() : unnamed/anonymous function, why do we need this
+        // () => expression : arrow function
+  
+        const user = {
+          name: "test",
+          age: 12,
+          greeting: function () {
+            // setTimeout(function () {
+            //   console.log("Hello from", this.name); // this will not print the name as setTimeout function belongs to Window object that doesn't have any property named "name"
+            //   //and this references the window object and not the user object.
+            
+            // }, 2000);
+
+            //so we use this now
+            setTimeout( () =>  {
+              console.log("Hello from", this.name); // this will not print the name as setTimeout function belongs to Window object that doesn't have any property named "name"
+              //and this references the window object and not the user object.
+            
+            }, 1000);
+          },
+        };
+        user.greeting();
+        user.name = "demo";
+        user.greeting();
+      </script>
+</body>
+</html>

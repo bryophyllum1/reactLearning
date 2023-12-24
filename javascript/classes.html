@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Demo{
+            demoData;
+            constructor(){
+                console.log("constructor called");
+            }
+            // Inside class we don't need the function keyword, just function name
+            func1(){
+                this.demoData = "demo data";
+                console.log("function 1");
+            }
+
+            func2(){
+                this.func1();
+                console.log("function 2");
+            }
+        }
+        const d = new Demo();
+        d.func2();
+        console.log(d.demoData);
+    </script>
+</body>
+</html>

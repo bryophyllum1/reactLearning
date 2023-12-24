@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    /*  
+    * what is the difference between in normal callbacks and promise when both are asynchronous functions
+    * 
+    */
+      function asyncCallback(yes, no) {
+        setTimeout(function () {
+          yes();
+        }, 1000);
+        setTimeout(function () {
+          no();
+        }, 2000);
+      }
+
+    //   asyncCallback(
+    //     function () {
+    //       console.log("yes", "call bank");
+    //     },
+    //     function () {
+    //       console.log("no", "contact next person");
+    //     }
+    //   );
+
+      function asyncPromise() {
+        return new Promise(function (resolve, reject) {
+          setTimeout(function () {
+            resolve();
+          }, 1000);
+          setTimeout(function () {
+            reject();
+          }, 2000);
+        });
+      }
+
+      asyncPromise()
+        .then(function () {
+          console.log("promise resolved");
+        })
+        .catch(function () {
+          console.log("promise rejected");
+        });
+  </script>  
+</body>
+</html>
